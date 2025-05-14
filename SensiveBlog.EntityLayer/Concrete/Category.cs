@@ -8,6 +8,8 @@ namespace SensiveBlog.EntityLayer.Concrete
 {
     public class Category
     {
-
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public ICollection<Article> Articles { get; set; } // Navigation property to the Article entity
     }
 }
