@@ -1,3 +1,6 @@
+using SensiveBlog.DataAccesLayer.Context;
+using SensiveBlog.EntityLayer.Concrete;
+
 namespace SensiveBlog.PresentationLayer
 {
     public class Program
@@ -7,7 +10,12 @@ namespace SensiveBlog.PresentationLayer
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<SensiveContext>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SensiveContext>();
+
             builder.Services.AddControllersWithViews();
+
+
 
             var app = builder.Build();
 

@@ -17,6 +17,5 @@ namespace SensiveBlog.EntityLayer.Concrete
         public int CategoryId { get; set; }
         public Category Category { get; set; } // Navigation property to the Category entity
 
-
     }
 }
