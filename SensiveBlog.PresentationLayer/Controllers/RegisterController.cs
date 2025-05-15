@@ -35,7 +35,14 @@ namespace SensiveBlog.PresentationLayer.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
-            return View();
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View();
+            }
         }
     }
 }

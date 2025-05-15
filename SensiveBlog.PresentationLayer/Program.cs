@@ -1,5 +1,6 @@
 using SensiveBlog.DataAccesLayer.Context;
 using SensiveBlog.EntityLayer.Concrete;
+using SensiveBlog.PresentationLayer.Models;
 
 namespace SensiveBlog.PresentationLayer
 {
@@ -11,7 +12,8 @@ namespace SensiveBlog.PresentationLayer
 
             // Add services to the container.
             builder.Services.AddDbContext<SensiveContext>();
-            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SensiveContext>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SensiveContext>
+                ().AddErrorDescriber<CustomIdentityValidator>();
 
             builder.Services.AddControllersWithViews();
 
@@ -29,6 +31,8 @@ namespace SensiveBlog.PresentationLayer
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 
