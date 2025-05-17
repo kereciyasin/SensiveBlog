@@ -1,4 +1,5 @@
 ﻿using SensiveBlog.BusinessLayer.Abstract;
+using SensiveBlog.DataAccesLayer.Abstract;
 using SensiveBlog.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,34 +11,48 @@ namespace SensiveBlog.BusinessLayer.Concrete
 {
     public class ArticleManager : IArticleService
     {
+        private readonly IArticleDal _articleDal;
+
+        public ArticleManager(IArticleDal articleDal)
+        {
+            _articleDal = articleDal;
+        }
+
         public void TDelete(Article id)
         {
-            throw new NotImplementedException();
+            _articleDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface   
         }
 
         public List<Article> TGetAll()
         {
-            throw new NotImplementedException();
+            return _articleDal.GetAll(); // Assuming GetAll() is implemented in the IGenericDal interface
         }
 
         public List<Article> TGetAll(Func<Article, bool> filter)
         {
-            throw new NotImplementedException();
+            return _articleDal.GetAll(); // Assuming GetAll(Func<T, bool>) is implemented in the IGenericDal interface
         }
 
         public Article TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _articleDal.GetById(id); // Assuming GetById(int) is implemented in the IGenericDal interface
         }
 
         public void TInsert(Article entity)
         {
-            throw new NotImplementedException();
+            _articleDal.Insert(entity); // Assuming Insert(T) is implemented in the IGenericDal interface   
         }
 
         public void TUpdate(Article entity)
         {
-            throw new NotImplementedException();
+            if (entity.Description != "" && entity.Title.Length >= 5 && entity.Title.Length <= 100)
+            {
+                _articleDal.Update(entity); // Assuming Update(T) is implemented in the IGenericDal interface  
+            }
+            else
+            {
+                throw new Exception("Article properties cannot be empty.");
+            }
         }
     }
 }

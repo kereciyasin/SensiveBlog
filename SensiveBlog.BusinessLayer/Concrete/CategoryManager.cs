@@ -1,4 +1,5 @@
 ﻿using SensiveBlog.BusinessLayer.Abstract;
+using SensiveBlog.DataAccesLayer.Abstract;
 using SensiveBlog.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,34 +11,47 @@ namespace SensiveBlog.BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+        private readonly ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+
         public void TDelete(Category id)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(id);
         }
 
         public List<Category> TGetAll()
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAll(); // Assuming GetAll() is implemented in the IGenericDal interface
         }
 
         public List<Category> TGetAll(Func<Category, bool> filter)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAll(); // Assuming GetAll(Func<T, bool>) is implemented in the IGenericDal interface
         }
 
         public Category TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetById(id); // Assuming GetById(int) is implemented in the IGenericDal interface
         }
 
         public void TInsert(Category entity)
         {
-            throw new NotImplementedException();
+            if (entity.CategoryName.Length >= 5 && entity.CategoryName.Length <= 50)
+            {
+                _categoryDal.Insert(entity); // Assuming Insert(T) is implemented in the IGenericDal interface
+            }
+            else
+            {
+                throw new Exception("Category name must be between 5 and 50 characters.");
+            }
         }
 
         public void TUpdate(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(entity); // Assuming Update(T) is implemented in the IGenericDal interface  
         }
     }
 }
