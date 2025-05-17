@@ -12,5 +12,9 @@ namespace SensiveBlog.EntityLayer.Concrete
         public string Detail { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool Status { get; set; } // Indicates if the comment is active or not
+
+        public int AppUserId { get; set; } // Foreign key to the AppUser entity  
+        public AppUser AppUser { get; set; } // Navigation property to the AppUser entity   
+
     }
 }

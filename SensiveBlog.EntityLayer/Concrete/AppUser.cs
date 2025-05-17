@@ -12,5 +12,7 @@ namespace SensiveBlog.EntityLayer.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImageUrl { get; set; }
+        public ICollection<Article> Articles { get; set; }
+        public ICollection<Comment> Comments { get; set; } // Navigation property to the Comment entity
     }
 }

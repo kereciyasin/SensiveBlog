@@ -17,5 +17,8 @@ namespace SensiveBlog.EntityLayer.Concrete
         public int CategoryId { get; set; }
         public Category Category { get; set; } // Navigation property to the Category entity
 
+        public int AppUserId { get; set; }
+        public AppUser AppUser { get; set; } // Navigation property to the AppUser entity
+
     }
 }
