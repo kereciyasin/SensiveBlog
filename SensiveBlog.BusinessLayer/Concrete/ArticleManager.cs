@@ -18,7 +18,7 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _articleDal = articleDal;
         }
 
-        public void TDelete(Article id)
+        public void TDelete(int id)
         {
             _articleDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface   
         }

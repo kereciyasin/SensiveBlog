@@ -1,0 +1,34 @@
+﻿@model Category
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Create New Category</h4>
+                </div>
+
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="CategoryId" />
+                        <div class="form-group mb-3">
+                            <label for="CategoryName" class="form-label">Category Name</label>
+                            <input type="text" asp-for="CategoryName" class="form-control" placeholder="Enter category name" required />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary w-100">Update Category</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

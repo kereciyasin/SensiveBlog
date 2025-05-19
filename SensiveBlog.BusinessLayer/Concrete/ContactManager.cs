@@ -18,9 +18,9 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _contactDal = contactDal;
         }
 
-        public void TDelete(Contact id)
+        public void TDelete(int id)
         {
-            _contactDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface
+            _contactDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface  
         }
 
         public List<Contact> TGetAll()

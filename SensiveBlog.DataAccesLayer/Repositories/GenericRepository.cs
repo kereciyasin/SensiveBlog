@@ -17,11 +17,11 @@ namespace SensiveBlog.DataAccesLayer.Repositories
             _context = context;
         }
 
-        public void Delete(T id)
+        public void Delete(int id)
         {
             var value = _context.Set<T>().Find(id);
-            _context.Set<T>().Remove(value); // Remove the entity from the context
-            _context.SaveChanges(); // Save changes to the database
+            _context.Set<T>().Remove(value);
+            _context.SaveChanges();
         }
 
         public List<T> GetAll()

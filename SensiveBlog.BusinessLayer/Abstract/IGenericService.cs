@@ -10,7 +10,7 @@ namespace SensiveBlog.BusinessLayer.Abstract
     {
         void TInsert(T entity);
         void TUpdate(T entity);
-        void TDelete(T id);
+        void TDelete(int id);
         T TGetById(int id);
         List<T> TGetAll();
         List<T> TGetAll(Func<T, bool> filter);

@@ -10,7 +10,7 @@ namespace SensiveBlog.DataAccesLayer.Abstract
     {
         void Insert(T entity);
         void Update(T entity);
-        void Delete(T id);
+        void Delete(int id);
         T GetById(int id);
         List<T> GetAll();
         List<T> GetAll(Func<T, bool> filter);

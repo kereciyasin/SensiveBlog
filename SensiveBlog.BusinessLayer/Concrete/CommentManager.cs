@@ -18,7 +18,7 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _commentDal = commentDal;
         }
 
-        public void TDelete(Comment id)
+        public void TDelete(int id)
         {
             _commentDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface
         }

@@ -17,9 +17,9 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void TDelete(Category id)
+        public void TDelete(int id)
         {
-            _categoryDal.Delete(id);
+            _categoryDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface  
         }
 
         public List<Category> TGetAll()
