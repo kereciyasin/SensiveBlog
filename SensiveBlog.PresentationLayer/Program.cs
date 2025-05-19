@@ -1,4 +1,8 @@
+using SensiveBlog.BusinessLayer.Abstract;
+using SensiveBlog.BusinessLayer.Concrete;
+using SensiveBlog.DataAccesLayer.Abstract;
 using SensiveBlog.DataAccesLayer.Context;
+using SensiveBlog.DataAccesLayer.EntityFramework;
 using SensiveBlog.EntityLayer.Concrete;
 using SensiveBlog.PresentationLayer.Models;
 
@@ -14,6 +18,22 @@ namespace SensiveBlog.PresentationLayer
             builder.Services.AddDbContext<SensiveContext>();
             builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SensiveContext>
                 ().AddErrorDescriber<CustomIdentityValidator>();
+
+            builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+            builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
+            builder.Services.AddScoped<IContactDal, EfContactDal>();
+            builder.Services.AddScoped<IContactService, ContactManager>();
+
+            builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+            builder.Services.AddScoped<IArticleService, ArticleManager>();
+
+            builder.Services.AddScoped<IContactDal, EfContactDal>();
+            builder.Services.AddScoped<IContactService, ContactManager>();
+
+            builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+            builder.Services.AddScoped<ICommentService, CommentManager>();
+
 
             builder.Services.AddControllersWithViews();
 
