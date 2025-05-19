@@ -42,11 +42,13 @@ namespace SensiveBlog.DataAccesLayer.Repositories
         public void Insert(T entity)
         {
             _context.Set<T>().Add(entity); // Add a new entity to the context   
+            _context.SaveChanges(); // Save changes to the database
         }
 
         public void Update(T entity)
         {
             _context.Set<T>().Update(entity); // Update an existing entity in the context   
+            _context.SaveChanges(); // Save changes to the database
         }
     }
 }
