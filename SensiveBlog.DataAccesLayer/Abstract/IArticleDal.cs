@@ -11,6 +11,7 @@ namespace SensiveBlog.DataAccesLayer.Abstract
     {
         // Custom methods for Article can be added here if needed
         List<Article> ArticleListWithCategory();
+        List<Article> ArticleListWithCategoryAndAppUser();
     }
 
 }

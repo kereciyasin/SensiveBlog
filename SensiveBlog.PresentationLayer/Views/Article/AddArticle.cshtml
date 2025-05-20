@@ -1,0 +1,53 @@
+﻿@model Article
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Create New Article</h4>
+                </div>
+
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" asp-for="Title" class="form-control" placeholder="Enter title" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Description</label>
+                            <input type="text" asp-for="Description" class="form-control" placeholder="Enter description" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Cover Image URL</label>
+                            <input type="text" asp-for="CoverImageUrl" class="form-control" placeholder="Enter image URL" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Category</label>
+                            @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Author</label>
+                            @* @Html.DropDownListFor(x => x.AppUserId, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control" }) *@
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary w-100">Add Article</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
