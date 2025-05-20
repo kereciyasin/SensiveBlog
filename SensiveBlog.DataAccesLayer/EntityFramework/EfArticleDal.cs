@@ -1,4 +1,5 @@
-﻿using SensiveBlog.DataAccesLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using SensiveBlog.DataAccesLayer.Abstract;
 using SensiveBlog.DataAccesLayer.Context;
 using SensiveBlog.DataAccesLayer.Repositories;
 using SensiveBlog.EntityLayer.Concrete;
@@ -14,6 +15,13 @@ namespace SensiveBlog.DataAccesLayer.EntityFramework
     {
         public EfArticleDal(SensiveContext context) : base(context)
         {
+        }
+
+        public List<Article> ArticleListWithCategory()
+        {
+            var context = new SensiveContext();
+            var values = context.Articles.Include(x => x.Category).ToList();
+            return values;
         }
     }
 

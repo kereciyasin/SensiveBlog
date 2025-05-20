@@ -1,0 +1,40 @@
+﻿@model List<Article>
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container">
+    <br /> <br />
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Autor</th>
+            <th>Date</th>
+            <th>Details</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ArticleId</td>
+                <td>@item.Title</td>
+                <td>@item.CategoryId</td>
+                <td>@item.AppUserId</td>
+                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                <td><a href="#" class="btn btn-primary">Details</a></td>
+                <td><a href="#" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" class="btn btn-warning">Update</a></td>
+
+            </tr>
+        }
+    </table>
+    <a href="/Article/Create" class="btn btn-primary">New Article Create</a>
+</div>
+

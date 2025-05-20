@@ -18,6 +18,11 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _articleDal = articleDal;
         }
 
+        public List<Article> TArticleListWithCategory()
+        {
+            return _articleDal.ArticleListWithCategory(); // Assuming ArticleListWithCategory() is implemented in the IArticleDal interface
+        }
+
         public void TDelete(int id)
         {
             _articleDal.Delete(id); // Assuming Delete(T) is implemented in the IGenericDal interface   
