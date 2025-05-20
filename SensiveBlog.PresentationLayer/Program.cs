@@ -34,6 +34,9 @@ namespace SensiveBlog.PresentationLayer
             builder.Services.AddScoped<ICommentDal, EfCommentDal>();
             builder.Services.AddScoped<ICommentService, CommentManager>();
 
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
 
             builder.Services.AddControllersWithViews();
 

@@ -8,12 +8,14 @@ namespace SensiveBlog.PresentationLayer.Controllers
     {
         private readonly IArticleService _articleService;
         private readonly ICategoryService _categoryService;
+        private readonly IAppUserService _appUserService;
 
 
-        public ArticleController(IArticleService articleService, ICategoryService categoryService)
+        public ArticleController(IArticleService articleService, ICategoryService categoryService, IAppUserService appUserService)
         {
             _articleService = articleService;
             _categoryService = categoryService;
+            _appUserService = appUserService;
         }
 
         public IActionResult ArticleList()
@@ -43,6 +45,15 @@ namespace SensiveBlog.PresentationLayer.Controllers
                                            }).ToList();
             ViewBag.v1 = value1;
 
+
+            var appUserList = _appUserService.TGetAll();
+            List<SelectListItem> value2 = (from x in appUserList
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name + " " + x.Surname,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            ViewBag.v2 = value2;
             return View();
         }
 
