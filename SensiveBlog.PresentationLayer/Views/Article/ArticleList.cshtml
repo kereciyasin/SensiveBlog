@@ -29,12 +29,12 @@
                 <td>@item.AppUserId</td>
                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                 <td><a href="#" class="btn btn-primary">Details</a></td>
-                <td><a href="#" class="btn btn-danger">Delete</a></td>
-                <td><a href="#" class="btn btn-warning">Update</a></td>
+                <td><a href="/Article/DeleteArticle/@item.ArticleId" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Article/UpdateArticle/@item.ArticleId" class="btn btn-warning">Update</a></td>
 
             </tr>
         }
     </table>
-    <a href="/Article/Create" class="btn btn-primary">New Article Create</a>
+    <a href="/Article/AddArticle" class="btn btn-primary">New Article Create</a>
 </div>
 
