@@ -30,6 +30,13 @@ namespace SensiveBlog.DataAccesLayer.EntityFramework
             var values = context.Articles.Include(x => x.Category).Include(x => x.AppUser).ToList();
             return values;
         }
+
+        public Article GetLastArticle()
+        {
+            var context = new SensiveContext();
+            var values = context.Articles.OrderByDescending(x => x.ArticleId).Take(1).FirstOrDefault();
+            return values;
+        }
     }
 
 }

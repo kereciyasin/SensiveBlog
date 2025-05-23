@@ -3,19 +3,19 @@ using SensiveBlog.BusinessLayer.Abstract;
 
 namespace SensiveBlog.PresentationLayer.ViewComponents
 {
-    public class _ArticleListComponentPartial : ViewComponent
+    public class _LastArticleComponentPartial : ViewComponent
     {
         private readonly IArticleService _articleService;
 
-        public _ArticleListComponentPartial(IArticleService articleService)
+        public _LastArticleComponentPartial(IArticleService articleService)
         {
             _articleService = articleService;
         }
 
         public IViewComponentResult Invoke()
         {
-            var values = _articleService.TArticleListWithCategoryAndAppUser();
-            return View(values);
+            var lastArticle = _articleService.TGetLastArticle();
+            return View(lastArticle);
         }
     }
 }

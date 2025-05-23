@@ -18,14 +18,16 @@ namespace SensiveBlog.BusinessLayer.Concrete
             _articleDal = articleDal;
         }
 
-        public List<Article> ArticleListWithCategoryAndAppUser()
-        {
-            return _articleDal.ArticleListWithCategoryAndAppUser(); // Assuming ArticleListWithCategoryAndAppUser() is implemented in the IArticleDal interface
-        }
+
 
         public List<Article> TArticleListWithCategory()
         {
             return _articleDal.ArticleListWithCategory(); // Assuming ArticleListWithCategory() is implemented in the IArticleDal interface
+        }
+
+        public List<Article> TArticleListWithCategoryAndAppUser()
+        {
+            return _articleDal.ArticleListWithCategoryAndAppUser();
         }
 
         public void TDelete(int id)
@@ -46,6 +48,11 @@ namespace SensiveBlog.BusinessLayer.Concrete
         public Article TGetById(int id)
         {
             return _articleDal.GetById(id); // Assuming GetById(int) is implemented in the IGenericDal interface
+        }
+
+        public Article TGetLastArticle()
+        {
+            return _articleDal.GetLastArticle(); // Assuming GetLastArticle() is implemented in the IArticleDal interface   
         }
 
         public void TInsert(Article entity)

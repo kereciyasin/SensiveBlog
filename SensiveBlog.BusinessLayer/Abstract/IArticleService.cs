@@ -10,7 +10,8 @@ namespace SensiveBlog.BusinessLayer.Abstract
     public interface IArticleService : IGenericService<Article>
     {
         List<Article> TArticleListWithCategory();
-        List<Article> ArticleListWithCategoryAndAppUser();
+        List<Article> TArticleListWithCategoryAndAppUser();
+        public Article TGetLastArticle();
     }
 
 }

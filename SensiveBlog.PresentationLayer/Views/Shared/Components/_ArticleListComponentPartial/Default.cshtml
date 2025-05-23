@@ -7,9 +7,8 @@
         <div class="blog-item">
             <img src="@item.CoverImageUrl" alt="Blog 3 Kapak">
             <a href="https://example.com/blog3" target="_blank">@item.Title</a>
-            <p>@item.Description</p>
+            <p>@item.Description.Substring(0, 250)... <a href="" class="btn btn-primary">More Read</a> </p>
         </div>
     }
-
 </div>
 
