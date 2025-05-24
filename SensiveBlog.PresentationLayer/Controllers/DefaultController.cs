@@ -14,7 +14,7 @@ namespace SensiveBlog.PresentationLayer.Controllers
 
         public IActionResult ArticleList()
         {
-            var values = _articleService.ArticleListWithCategoryAndAppUser();
+            var values = _articleService.TArticleListWithCategoryAndAppUser();
             return View();
         }
     }

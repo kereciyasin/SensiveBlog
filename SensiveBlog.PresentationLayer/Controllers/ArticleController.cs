@@ -31,7 +31,7 @@ namespace SensiveBlog.PresentationLayer.Controllers
         }
         public IActionResult ArticleListWithCategoryAndAppUser()
         {
-            var values = _articleService.ArticleListWithCategoryAndAppUser();
+            var values = _articleService.TArticleListWithCategoryAndAppUser();
             return View(values);
         }
         [HttpGet]
@@ -99,6 +99,12 @@ namespace SensiveBlog.PresentationLayer.Controllers
             ViewBag.v2 = value2;
             var values = _articleService.TGetById(id);
             return View(values);
+        }
+
+        public IActionResult ArticleDetail(int id)
+        {
+            var value = _articleService.TGetById(id);
+            return View(value);
         }
 
 
