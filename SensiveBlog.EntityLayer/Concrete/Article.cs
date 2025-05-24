@@ -20,5 +20,7 @@ namespace SensiveBlog.EntityLayer.Concrete
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; } // Navigation property to the AppUser entity
 
+        public ICollection<Comment> Comments { get; set; } // Navigation property to the Comment entity
+
     }
 }

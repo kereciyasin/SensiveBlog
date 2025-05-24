@@ -8,23 +8,7 @@
 <body>
 
     <div class="container">
-        <!-- Kapak Fotoğrafı -->
-        <div class="cover" style="background-image: url('https://via.placeholder.com/800x300');"></div>
-
-        <!-- Blog Meta Bilgileri -->
-        <div class="meta">
-            <span>Kategori: <strong>Teknoloji</strong></span>
-            <span>Yazar: <strong>John Doe</strong></span>
-            <span>Oluşturma Tarihi: <strong>21 Kasım 2024</strong></span>
-        </div>
-
-        <!-- Blog Detayı -->
-        <div class="content">
-            <h1>Blog Başlığı</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Nulla facilisi. Cras tristique purus vel felis ultricies, eget feugiat nisl dignissim. Sed quis turpis vitae eros viverra tincidunt.</p>
-            <p>Donec vel justo euismod, finibus tortor vel, tempus massa. Aenean blandit massa at odio ornare vehicula. Integer fermentum malesuada lacus in vehicula. Curabitur id libero et sapien varius aliquam.</p>
-        </div>
-
+        @await Component.InvokeAsync("_ArticleDetailListComponentPartial")
         <!-- Yorumlar -->
         <div class="comments">
             <h2>Yorumlar</h2>
