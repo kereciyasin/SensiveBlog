@@ -13,7 +13,7 @@ namespace SensiveBlog.PresentationLayer.ViewComponents.ArticleDetails
         }
         public IViewComponentResult Invoke()
         {
-            var value = _commentService.TGetById(1); // Assuming you want to get comments for article with ID 1
+            var value = _commentService.TGetCommentsByArticleId(1); // Assuming you want to get comments for article with ID 1
             return View(value);
         }
     }

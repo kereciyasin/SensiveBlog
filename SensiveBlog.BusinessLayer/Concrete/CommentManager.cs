@@ -4,6 +4,7 @@ using SensiveBlog.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,11 @@ namespace SensiveBlog.BusinessLayer.Concrete
         public Comment TGetById(int id)
         {
             return _commentDal.GetById(id); // Assuming GetById(int) is implemented in the IGenericDal interface 
+        }
+
+        public List<Comment> TGetCommentsByArticleId(int id)
+        {
+            return _commentDal.GetCommentsByArticleId(id); // Assuming GetCommentsByArticleId(int) is implemented in the ICommentDal interface
         }
 
         public void TInsert(Comment entity)

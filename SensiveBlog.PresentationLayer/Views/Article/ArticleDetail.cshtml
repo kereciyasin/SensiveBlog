@@ -10,17 +10,8 @@
     <div class="container">
         @await Component.InvokeAsync("_ArticleDetailListComponentPartial")
         <!-- Yorumlar -->
-        <div class="comments">
-            <h2>Yorumlar</h2>
-            <div class="comment">
-                <p class="comment-author">Jane Doe</p>
-                <p>Harika bir yazı! Çok bilgilendirici olmuş.</p>
-            </div>
-            <div class="comment">
-                <p class="comment-author">Michael Smith</p>
-                <p>Detaylara hayran kaldım. Teşekkürler!</p>
-            </div>
-        </div>
+        @await Component.InvokeAsync("_ArticleDetailCommentListComponentPartial")
+
 
         <!-- Yeni Yorum Yapma -->
         <div class="new-comment">
