@@ -9,9 +9,7 @@ namespace SensiveBlog.BusinessLayer.Abstract
 {
     public interface ICommentService : IGenericService<Comment>
     {
-        // Custom methods for Comment can be added here
-        // For example:
-        // List<Comment> GetCommentsByArticleId(int articleId);
+        public List<Comment> TGetCommentsByArticleId(int id);
     }
 
 }

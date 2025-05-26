@@ -9,7 +9,7 @@ namespace SensiveBlog.DataAccesLayer.Abstract
 {
     public interface ICommentDal : IGenericDal<Comment>
     {
-        // Custom methods for Comment can be added here if needed
+        List<Comment> GetCommentsByArticleId(int Id);
     }
 
 }

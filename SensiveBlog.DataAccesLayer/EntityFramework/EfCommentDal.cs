@@ -15,6 +15,13 @@ namespace SensiveBlog.DataAccesLayer.EntityFramework
         public EfCommentDal(SensiveContext context) : base(context)
         {
         }
-    }
 
+        public List<Comment> GetCommentsByArticleId(int Id)
+        {
+            var context = new SensiveContext();
+            var values = context.Comments.Where(x => x.ArticleId == Id).ToList();
+            return values;
+        }
+
+    }
 }
