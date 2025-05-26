@@ -19,5 +19,6 @@ namespace SensiveBlog.EntityLayer.Concrete
         public int ArticleId { get; set; } // Foreign key to the Article entity
         public Article Article { get; set; } // Navigation property to the Article entity
 
+
     }
 }
