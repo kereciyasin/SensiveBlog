@@ -8,17 +8,13 @@
 <body>
 
     <div class="container">
-        @await Component.InvokeAsync("_ArticleDetailListComponentPartial")
+        @await Component.InvokeAsync("_ArticleDetailListComponentPartial", new { id = ViewBag.i })
         <!-- Yorumlar -->
-        @await Component.InvokeAsync("_ArticleDetailCommentListComponentPartial")
+        @await Component.InvokeAsync("_ArticleDetailCommentListComponentPartial", new { id = ViewBag.i })
 
 
         <!-- Yeni Yorum Yapma -->
-        <div class="new-comment">
-            <h2>Yeni Yorum Yap</h2>
-            <textarea placeholder="Yorumunuzu buraya yazın..."></textarea>
-            <button class="btn">Gönder</button>
-        </div>
+        @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new { id = ViewBag.i })
     </div>
 
 </body>

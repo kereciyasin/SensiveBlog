@@ -11,9 +11,9 @@ namespace SensiveBlog.PresentationLayer.ViewComponents.ArticleDetails
         {
             _commentService = commentService;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int id)
         {
-            var value = _commentService.TGetCommentsByArticleId(1); // Assuming you want to get comments for article with ID 1
+            var value = _commentService.TGetCommentsByArticleId(id); // Assuming you want to get comments for article with ID 1
             return View(value);
         }
     }

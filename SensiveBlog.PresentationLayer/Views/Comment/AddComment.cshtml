@@ -1,0 +1,13 @@
+﻿@model Comment
+
+<form method="post" asp-action="AddComment" asp-controller="Comment">
+
+    <div class="new-comment">
+        <h2>New Comment</h2>
+        <input asp-for="ArticleId" type="text" readonly />
+        <textarea placeholder="Write your comment here..." rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+
+</form>
